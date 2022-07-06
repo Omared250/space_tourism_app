@@ -15,7 +15,7 @@
 }
 
 body {
-    height: 130vh;
+    height: 120vh;
     background-image: url(./src/images/home/background-home-desktop.jpg);
     background-repeat: no-repeat;
     background-size: cover;
@@ -44,8 +44,7 @@ body {
 
 .nav__bar hr {
     margin-right: -2rem;
-    width: 40%;
-    height: 0.01em;
+    width: 40rem;
     z-index: 1;
 
     align-self: center;
@@ -56,8 +55,8 @@ body {
     width: 65%;
     display: flex;
     justify-content: center;
-    gap: 2rem;
     align-items: center;
+    gap: 2rem;
 
     color: var(--sub-headings);
     background-color: rgba(255, 255, 255, 0.15);
@@ -69,4 +68,65 @@ body {
     color: var(--headings);
 }
 
-/*------------------*/
+/*------------------space__article__home -------------------*/
+
+.home__info {
+    position: absolute;
+    width: 20rem;
+    height: fit-content;
+    top: 20rem;
+    left: 10rem;
+
+    color: var(--headings);
+    /* background-color: aquamarine; */
+}
+
+.home__info h1 {
+    margin: 2rem auto;
+    font-size: 100px;
+    font-weight: 100;
+    font-family: 'Bellefair';
+    color: var(--headings);
+}
+
+.home__info h3 {
+    color: var(--sub-headings);
+    letter-spacing: 3.5px;
+    font-family: 'Barlow Condensed';
+}
+
+.home__info p {
+    font-family: 'Barlow Condensed';
+    line-height: 1.5rem;
+    color: var(--sub-headings);
+}
+
+/*------------------ explore__section------------------------*/
+
+.explore {
+    display: flex;
+    width: 15rem;
+    height: 15rem;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    top: 23rem;
+    right: 12rem;
+
+    border-radius: 50%;
+    background-color: var(--headings);
+
+    font-size: 28px;
+    font-family: 'Bellefair';
+    letter-spacing: 2.35px;
+    z-index: 1;
+}
+
+.explore:hover::after {
+    content: '';
+    width: 100px;
+    height: 100px;
+    background-color: black;
+    z-index: 5;
+}
