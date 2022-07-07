@@ -15,7 +15,6 @@
 }
 
 body {
-    height: 120vh;
     background-image: url(./src/images/home/background-home-desktop.jpg);
     background-repeat: no-repeat;
     background-size: cover;
@@ -26,10 +25,9 @@ body {
 
 .nav__bar {
     width: 94%;
-    position: absolute;
     height: 4.5rem;
-    top: 3rem;
-    right: 0;
+    margin-top: 3rem;
+    margin-left: 5rem;
 
     display: flex;
     justify-content: center;
@@ -44,7 +42,7 @@ body {
 
 .nav__bar hr {
     margin-right: -2rem;
-    width: 40rem;
+    width: 35rem;
     z-index: 1;
 
     align-self: center;
@@ -52,81 +50,86 @@ body {
 }
 
 .menu__options {
-    width: 65%;
+    width: 70%;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 2rem;
 
-    color: var(--sub-headings);
+    color: var(--headings);
+    font-family: 'Barlow Condensed';
+    letter-spacing: 2.35px;
     background-color: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(15px);
 }
 
 .menu__options span {
     margin: 0.5rem;
+    font-weight: 600;
     color: var(--headings);
 }
 
 /*------------------space__article__home -------------------*/
 
 .home__info {
-    position: absolute;
-    width: 20rem;
+    width: 25rem;
     height: fit-content;
-    top: 20rem;
-    left: 10rem;
+    margin-top: 15rem;
+    margin-left: 10rem;
 
     color: var(--headings);
-    /* background-color: aquamarine; */
 }
 
 .home__info h1 {
-    margin: 2rem auto;
-    font-size: 100px;
+    margin: 1rem auto;
+    font-size: 140px;
     font-weight: 100;
     font-family: 'Bellefair';
     color: var(--headings);
 }
 
 .home__info h3 {
+    font-size: 28px;
     color: var(--sub-headings);
     letter-spacing: 3.5px;
     font-family: 'Barlow Condensed';
 }
 
 .home__info p {
+    font-size: 20px;
     font-family: 'Barlow Condensed';
     line-height: 1.5rem;
     color: var(--sub-headings);
+    padding-bottom: 5rem;
 }
 
 /*------------------ explore__section------------------------*/
 
 .explore {
     display: flex;
-    width: 15rem;
-    height: 15rem;
+    position: absolute;
+    width: 20rem;
+    height: 20rem;
+    top: 25rem;
+    right: 6rem;
+
     justify-content: center;
     align-items: center;
 
-    position: absolute;
-    top: 23rem;
-    right: 12rem;
+    border-radius: 50%;
+}
 
+.explore p {
+    padding: 6rem 2.5rem;
     border-radius: 50%;
     background-color: var(--headings);
 
     font-size: 28px;
     font-family: 'Bellefair';
     letter-spacing: 2.35px;
-    z-index: 1;
 }
 
-.explore:hover::after {
-    content: '';
-    width: 100px;
-    height: 100px;
-    background-color: black;
-    z-index: 5;
+.explore:hover {
+    background-color: rgba(125, 125, 125, 0.35);
+    border-radius: 50%;
 }
