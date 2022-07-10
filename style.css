@@ -15,6 +15,7 @@
 }
 
 body {
+    min-width: 100vh;
     background-image: url(./src/images/home/background-home-desktop.jpg);
     background-repeat: no-repeat;
     background-size: cover;
@@ -67,6 +68,11 @@ body {
     margin: 0.5rem;
     font-weight: 600;
     color: var(--headings);
+}
+
+.menu__options p:hover {
+    cursor: pointer;
+    text-decoration: underline;
 }
 
 /*------------------space__article__home -------------------*/
@@ -129,7 +135,45 @@ body {
     letter-spacing: 2.35px;
 }
 
+.explore p:hover {
+    cursor: pointer;
+}
+
 .explore:hover {
     background-color: rgba(125, 125, 125, 0.35);
     border-radius: 50%;
 }
+
+/*---------------------DESTINATIONS ---------------------------*/
+
+/*--------------TITLE----------------------*/
+.destination__title {
+    margin-top: 5.5rem;
+    margin-left: 10rem;
+    color: var(--headings);
+    font-family: 'Barlow Condensed';
+    font-size: 28px;
+    letter-spacing: 4.35px;
+}
+
+.destination__title span {
+    color: rgb(81, 81, 81);;
+    padding-right: 0.5rem;
+}
+
+/*---------------IMAGE---------------------*/
+
+.destination__image {
+    margin-top: 5.5rem;
+    margin-left: 13rem;
+}
+
+/*--------------DESTINATION_INFO---------------*/
+
+.destination__info {
+    width: 30rem;
+    margin-top: -30rem;
+    margin-left: 50rem;
+    padding-bottom: 20rem;
+}
+
