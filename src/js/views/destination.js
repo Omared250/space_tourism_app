@@ -3,6 +3,10 @@ class Destination  {
     _parentEl = document.querySelector('.main_section');
     _data;
 
+    addHandlerRender(handler) {
+        ['load'].forEach(ev => window.addEventListener(ev, handler()));
+    };
+
     _generateMarkup() {
         return `
         <h3 class="destination__title"><span>01</span>PICK YOUR DESTINATION</h3>
