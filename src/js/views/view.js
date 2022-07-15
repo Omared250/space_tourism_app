@@ -1,4 +1,4 @@
-class navBar {
+class view {
     _navBarParentEl = document.querySelector('.menu__options');
 
     getClickValue(handler) {
@@ -15,4 +15,4 @@ class navBar {
     }
 }
 
-export default new navBar();
+export default new view();

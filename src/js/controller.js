@@ -1,6 +1,6 @@
 import * as model from "./model.js";
 import destination from "./views/destinationView.js";
-import navBarView from "./views/navBarView.js";
+import view from "./views/view.js";
 
 const controlData = async function() {
     try {
