@@ -7,8 +7,7 @@ class Destination  {
         ['load'].forEach(ev => window.addEventListener(ev, handler()));
     };
 
-    renderDestination(data) {
-        this._data = data;
+    renderDestination() {
         const markup = this._generateMarkup();
         this._parentEl.insertAdjacentHTML("beforeend", markup);
     }

@@ -1,5 +1,5 @@
 import * as model from "./model.js";
-import destination from "./views/destination.js";
+import destination from "./views/destinationView.js";
 import navBarView from "./views/navBarView.js";
 
 const controlData = async function() {
@@ -8,20 +8,20 @@ const controlData = async function() {
     } catch (err) {
         console.error(err);
     }
-}
+};
 
 const controlNavBar = function(value) {
     try {
         if (value.classList.contains('destination')) {
             navBarView.cleaner();
-            destination.renderDestination(model.state.destinations)
+            destination.renderDestination();
         } else {
             console.log('try again');
         }
     } catch (err) {
         console.error(err);
     }
-}
+};
 
 
 const init = function() {
