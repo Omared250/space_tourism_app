@@ -17,7 +17,8 @@ const controlNavBar = function(value) {
             navBarView.cleaner();
             destination.renderDestination();
         } else {
-            console.log('try again');
+            // console.log('try again');
+            return;
         }
     } catch (err) {
         console.error(err);
