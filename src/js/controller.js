@@ -12,6 +12,7 @@ const controlData = async function() {
 
 const controlNavBar = function(value) {
     try {
+        console.log(value);
         if (value.classList.contains('destination')) {
             navBarView.cleaner();
             destination.renderDestination();

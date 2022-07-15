@@ -2,11 +2,11 @@ class navBar {
     _navBarParentEl = document.querySelector('.menu__options');
 
     getClickValue(handler) {
-        this._navBarParentEl.addEventListener('click', (e) => {
+        const navOptions = this._navBarParentEl.querySelectorAll('p');
+        navOptions.forEach(op => op.addEventListener('click', (e) => {
             e.preventDefault();
-            const navVal = e.target;
-            handler(navVal);
-        })
+            handler(e.target);
+        }))
     }
 
     cleaner() {
