@@ -1,10 +1,23 @@
 import * as model from "./model.js";
 import destination from "./views/destination.js";
+import navBarView from "./views/navBarView.js";
 
 const controlData = async function() {
     try {
         await model.loadAll();
-        console.log(model.state);
+    } catch (err) {
+        console.error(err);
+    }
+}
+
+const controlNavBar = function(value) {
+    try {
+        if (value.classList.contains('destination')) {
+            navBarView.cleaner();
+            destination.renderDestination(model.state.destinations)
+        } else {
+            console.log('try again');
+        }
     } catch (err) {
         console.error(err);
     }
@@ -13,5 +26,6 @@ const controlData = async function() {
 
 const init = function() {
     destination.addHandlerRender(controlData);
+    navBarView.getClickValue(controlNavBar);
 }
 init();

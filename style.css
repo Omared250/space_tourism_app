@@ -130,6 +130,7 @@ body {
     padding: 6rem 2.5rem;
     border-radius: 50%;
     background-color: var(--headings);
+    color: var(--support-color);
 
     font-size: 28px;
     font-family: 'Bellefair';

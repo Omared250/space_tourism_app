@@ -7,6 +7,12 @@ class Destination  {
         ['load'].forEach(ev => window.addEventListener(ev, handler()));
     };
 
+    renderDestination(data) {
+        this._data = data;
+        const markup = this._generateMarkup();
+        this._parentEl.insertAdjacentHTML("beforeend", markup);
+    }
+
     _generateMarkup() {
         return `
         <h3 class="destination__title"><span>01</span>PICK YOUR DESTINATION</h3>
