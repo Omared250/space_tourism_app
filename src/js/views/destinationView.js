@@ -1,6 +1,7 @@
 class Destination  {
     _destinationEl = document.querySelector('#destination'); 
     _parentEl = document.querySelector('.main_section');
+    _bacgroundEl = document.querySelector('body');
     _data;
 
     addHandlerRender(handler) {
@@ -10,19 +11,14 @@ class Destination  {
     renderDestination(data) {
         this._data = data
         const markup = this._generateMarkup();
+        this._bacgroundEl.style.backgroundImage = "url('./src/images/destination/background-destination-desktop.jpg')"
         this._parentEl.insertAdjacentHTML("beforeend", markup);
-    }
-
-    _gettingImage(object) {
-        console.log(object);
-        return Object.values(object)
-        .map(e => e.png ? e.png : e);
     }
  
     _generateMarkup() {
         return `
         <h3 class="destination__title"><span>01</span>PICK YOUR DESTINATION</h3>
-        <img src="${this._gettingImage(this._data[0].images)}" alt="destination" class="destination__image">
+        <img src="${this._data[0].images.png}" alt="destination" class="destination__image">
         <section class="destination__info">
            <ul class="destination__options">
             <li>MOON</li>

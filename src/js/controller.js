@@ -10,15 +10,20 @@ const controlData = async function() {
     }
 };
 
+const renderView = function(dest) {
+    const destn = dest.split(' ').map(w => w.charAt(0).toUpperCase() + w.slice(1).toLowerCase()).join(' ');
+
+    view.cleaner();
+    destination.renderDestination(model.state.destinations.filter(d => d.name === destn));
+    controlDestinations();
+}
+
 const controlNavBar = function(value) {
     try {
         if (value.classList.contains('destination')) {
             view.cleaner();
             destination.renderDestination(model.state.destinations);
             controlDestinations()
-        } else {
-            // console.log('try again');
-            return;
         }
     } catch (err) {
         console.error(err);
@@ -32,9 +37,14 @@ const controlDestinations = function() {
         destinations.forEach(d => d.addEventListener('click', (e) => {
             e.preventDefault();
             const dest = e.target.innerHTML;
-            if (dest === 'MARS') {
-                view.cleaner();
-                destination.renderDestination(model.state.destinations.filter(d => d.name === 'Mars'));
+            if (dest === 'MOON') {
+                renderView(dest);
+            } else if (dest === 'MARS') {
+                renderView(dest);
+            } else if(dest === 'EUROPA') {
+                renderView(dest);
+            } else if(dest === 'TITAN') {
+                renderView(dest);
             }
         }))
     } catch (err) {
