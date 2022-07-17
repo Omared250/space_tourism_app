@@ -10,7 +10,6 @@ export const loadAll = async function() {
         state.destinations = Object.values(data.destinations);
         state.crew = Object.values(data.crew);
         state.technology = Object.values(data.technology);
-        console.log(state);
     } catch (err) {
         throw err;
     }

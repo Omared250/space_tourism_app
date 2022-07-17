@@ -1,4 +1,5 @@
 import * as model from "./model.js";
+import crewView from "./views/crewView.js";
 import destination from "./views/destinationView.js";
 import view from "./views/view.js";
 
@@ -10,12 +11,20 @@ const controlData = async function() {
     }
 };
 
-const renderView = function(dest, arr) {
+const updateDest = function(dest, arr, handler) {
     const destn = dest.split(' ').map(w => w.charAt(0).toUpperCase() + w.slice(1).toLowerCase()).join(' ');
 
     view.cleaner();
     destination.renderDestination(arr.filter(d => d.name === destn));
-    controlDestinations();
+    handler();
+}
+
+const updateCrew = function(crw, arr, handler) {
+    const crewMem = crw.split(' ').map(w => w.charAt(0).toUpperCase() + w.slice(1).toLowerCase()).join(' ');
+    
+    view.cleaner();
+    crewView.renderCrew(arr.filter(c => c.role === crewMem));
+    handler();
 }
 
 const controlNavBar = function(value) {
@@ -23,9 +32,11 @@ const controlNavBar = function(value) {
         if (value.classList.contains('destination')) {
             view.cleaner();
             destination.renderDestination(model.state.destinations);
-            controlDestinations()
+            controlDestinations();
         } else if (value.classList.contains('crew')) {
-            console.log('hey');
+            view.cleaner();
+            crewView.renderCrew(model.state.crew)
+            controlCrew()
         }
     } catch (err) {
         console.error(err);
@@ -40,13 +51,13 @@ const controlDestinations = function() {
             e.preventDefault();
             const dest = e.target.innerHTML;
             if (dest === 'MOON') {
-                renderView(dest, model.state.destinations);
+                updateDest(dest, model.state.destinations, controlDestinations);
             } else if (dest === 'MARS') {
-                renderView(dest, model.state.destinations);
+                updateDest(dest, model.state.destinations, controlDestinations);
             } else if(dest === 'EUROPA') {
-                renderView(dest, model.state.destinations);
+                updateDest(dest, model.state.destinations, controlDestinations);
             } else if(dest === 'TITAN') {
-                renderView(dest, model.state.destinations);
+                updateDest(dest, model.state.destinations, controlDestinations);
             }
         }))
     } catch (err) {
@@ -56,7 +67,21 @@ const controlDestinations = function() {
 
 const controlCrew = function() {
     try {
-        
+        const crewParentEl = document.querySelector('.dots');
+        const crew = crewParentEl.querySelectorAll('button');
+        crew.forEach(c => c.addEventListener('click', (e) => {
+            e.preventDefault();
+            const crw = e.target
+            if(crw.classList.contains('commander')) {
+                updateCrew('commander', model.state.crew, controlCrew)
+            } else if(crw.classList.contains('mission_specialist')) {
+                updateCrew('mission specialist', model.state.crew, controlCrew)
+            } else if(crw.classList.contains('pilot')) {
+                updateCrew('pilot', model.state.crew, controlCrew)
+            } else if(crw.classList.contains('flight_engineer')) {
+                updateCrew('flight engineer', model.state.crew, controlCrew)
+            }
+        }))
     } catch (err) {
         console.error(err);
     }
@@ -64,7 +89,7 @@ const controlCrew = function() {
 
 
 const init = function() {
-    destination.addHandlerRender(controlData);
+    view.addHandlerRender(controlData);
     view.getClickValue(controlNavBar);
 }
 init();

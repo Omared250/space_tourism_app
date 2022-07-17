@@ -1,12 +1,7 @@
 class Destination  {
-    _destinationEl = document.querySelector('#destination'); 
     _parentEl = document.querySelector('.main_section');
     _bacgroundEl = document.querySelector('body');
     _data;
-
-    addHandlerRender(handler) {
-        ['load'].forEach(ev => window.addEventListener(ev, handler()));
-    };
 
     renderDestination(data) {
         this._data = data
