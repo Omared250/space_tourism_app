@@ -10,11 +10,11 @@ const controlData = async function() {
     }
 };
 
-const renderView = function(dest) {
+const renderView = function(dest, arr) {
     const destn = dest.split(' ').map(w => w.charAt(0).toUpperCase() + w.slice(1).toLowerCase()).join(' ');
 
     view.cleaner();
-    destination.renderDestination(model.state.destinations.filter(d => d.name === destn));
+    destination.renderDestination(arr.filter(d => d.name === destn));
     controlDestinations();
 }
 
@@ -38,13 +38,13 @@ const controlDestinations = function() {
             e.preventDefault();
             const dest = e.target.innerHTML;
             if (dest === 'MOON') {
-                renderView(dest);
+                renderView(dest, model.state.destinations);
             } else if (dest === 'MARS') {
-                renderView(dest);
+                renderView(dest, model.state.destinations);
             } else if(dest === 'EUROPA') {
-                renderView(dest);
+                renderView(dest, model.state.destinations);
             } else if(dest === 'TITAN') {
-                renderView(dest);
+                renderView(dest, model.state.destinations);
             }
         }))
     } catch (err) {
