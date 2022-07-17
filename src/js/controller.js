@@ -24,6 +24,8 @@ const controlNavBar = function(value) {
             view.cleaner();
             destination.renderDestination(model.state.destinations);
             controlDestinations()
+        } else if (value.classList.contains('crew')) {
+            console.log('hey');
         }
     } catch (err) {
         console.error(err);
@@ -47,6 +49,14 @@ const controlDestinations = function() {
                 renderView(dest, model.state.destinations);
             }
         }))
+    } catch (err) {
+        console.error(err);
+    }
+}
+
+const controlCrew = function() {
+    try {
+        
     } catch (err) {
         console.error(err);
     }

@@ -38,8 +38,8 @@ class Destination  {
                    <h4>EST. TRAVEL TIME</h4>
                    <span>${this._data[0].travel}</span>
                </div>
-           </article> 
-        `
+           </article>
+        </section>`
     }
 }
 
