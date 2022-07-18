@@ -37,6 +37,8 @@ const controlNavBar = function(value) {
             view.cleaner();
             crewView.renderCrew(model.state.crew)
             controlCrew()
+        } else if (value.classList.contains('technology')) {
+            console.log('Omar');
         }
     } catch (err) {
         console.error(err);
@@ -82,6 +84,14 @@ const controlCrew = function() {
                 updateCrew('flight engineer', model.state.crew, controlCrew)
             }
         }))
+    } catch (err) {
+        console.error(err);
+    }
+}
+
+const controlTech = function() {
+    try {
+        
     } catch (err) {
         console.error(err);
     }

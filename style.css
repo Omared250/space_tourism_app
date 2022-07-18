@@ -293,11 +293,68 @@ body {
 .dots__dot {
     border: none;
     background-color: var(--headings);
-    opacity: 0.7;
     height: 0.7rem;
     width: 0.7rem;
     border-radius: 50%;
     margin-right: 1.75rem;
     cursor: pointer;
-    transition: all 0.5s;
+}
+
+/*----------------- TECHNOLOGY ------------------*/
+
+.tech__container {
+    display: flex;
+    width: 88%;
+    margin: 0 0 5rem 7rem;
+}
+
+.description__container {
+    display: flex;
+}
+
+.description {
+    margin: 10rem auto auto auto;
+}
+
+.description h4 {
+    margin-bottom: 1rem;
+    color: var(--sub-headings);
+    font-size: 12px;
+    letter-spacing: 2.5px;
+    font-family: 'Barlow Condensed';
+}
+
+.description h2 {
+    color: var(--headings);
+    font-family: 'Bellefair';
+    font-size: 45px;
+    font-weight: 100;
+}
+
+.description blockquote {
+    width: 62%;
+    margin-top: 1rem;
+    font-size: 16px;
+    font-family: 'Barlow Condensed';
+    line-height: 1.5rem;
+    letter-spacing: 1px;
+    color: var(--sub-headings);
+}
+
+.tech_dots {
+    margin: auto 2rem auto auto;
+}
+
+.tech_dots button {
+    border: 1px solid white;
+    background-color: transparent;
+    height: 4rem;
+    width: 4rem;
+    margin-top: 2rem;
+    border-radius: 50%;
+    cursor: pointer;
+
+    color: var(--headings);
+    font-size: 30px;
+    font-family: 'Bellefair';
 }
