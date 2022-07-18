@@ -305,7 +305,7 @@ body {
 .tech__container {
     display: flex;
     width: 88%;
-    margin: 0 0 5rem 7rem;
+    margin: 0 0 5rem 9.5rem;
 }
 
 .description__container {
@@ -332,7 +332,7 @@ body {
 }
 
 .description blockquote {
-    width: 62%;
+    width: 68%;
     margin-top: 1rem;
     font-size: 16px;
     font-family: 'Barlow Condensed';
@@ -342,7 +342,7 @@ body {
 }
 
 .tech_dots {
-    margin: auto 2rem auto auto;
+    margin: auto 4rem auto auto;
 }
 
 .tech_dots button {
