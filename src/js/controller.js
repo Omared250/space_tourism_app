@@ -77,6 +77,7 @@ const controlHome = function() {
             if (exp) {
                 view.cleaner();
                 destination.renderDestination(model.state.destinations)
+                controlDestinations();
             }
         })
     } catch (err) {
