@@ -1,6 +1,7 @@
 import * as model from "./model.js";
 import crewView from "./views/crewView.js";
 import destination from "./views/destinationView.js";
+import techView from "./views/techView.js";
 import view from "./views/view.js";
 
 const controlData = async function() {
@@ -27,6 +28,14 @@ const updateCrew = function(crw, arr, handler) {
     handler();
 }
 
+const updateTech = function(crw, arr, handler) {
+    const techComp = crw.split(' ').map(w => w.charAt(0).toUpperCase() + w.slice(1).toLowerCase()).join(' ');
+    
+    view.cleaner();
+    techView.renderTech(arr.filter(c => c.name === techComp));
+    handler();
+}
+
 const controlNavBar = function(value) {
     try {
         if (value.classList.contains('destination')) {
@@ -38,7 +47,9 @@ const controlNavBar = function(value) {
             crewView.renderCrew(model.state.crew)
             controlCrew()
         } else if (value.classList.contains('technology')) {
-            console.log('Omar');
+            view.cleaner();
+            techView.renderTech(model.state.technology);
+            controlTech();
         }
     } catch (err) {
         console.error(err);
@@ -91,7 +102,19 @@ const controlCrew = function() {
 
 const controlTech = function() {
     try {
-        
+        const techParentEl = document.querySelector('.tech_dots');
+        const techDots = techParentEl.querySelectorAll('button');
+        techDots.forEach(t => t.addEventListener('click', (e) => {
+            e.preventDefault();
+            const tech = e.target;
+            if(tech.classList.contains('vehicle')) {
+                updateTech('launch vehicle', model.state.technology, controlTech)
+            } else if(tech.classList.contains('spaceport')) {
+                updateTech('spaceport', model.state.technology, controlTech)
+            } else if(tech.classList.contains('capsule')) {
+                updateTech('Space capsule', model.state.technology, controlTech)
+            }
+        }))
     } catch (err) {
         console.error(err);
     }

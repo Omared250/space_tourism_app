@@ -1,4 +1,14 @@
 class technology {
+    _parentEl = document.querySelector('.main_section');
+    _bacgroundEl = document.querySelector('body');
+    _data;
+
+    renderTech(data) {
+        this._data = data
+        const markup = this._generateMarkupTech();
+        this._bacgroundEl.style.backgroundImage = "url('./src/images/technology/background-technology-desktop.jpg')"
+        this._parentEl.insertAdjacentHTML("beforeend", markup);
+    }
 
     _generateMarkupTech() {
         return `
@@ -12,16 +22,11 @@ class technology {
                 </div>
                 <div class="description">
                     <h4>THE TERMINOLOGY...</h4>
-                    <h2>LAUNCH VEHICLE</h2>
-                    <blockquote>
-                        A launch vehicle or carrier rocket is a rocket-propelled vehicle used to carry a payload 
-                        from Earth's surface to space, usually to Earth orbit or beyond. Our WEB-X carrier rocket 
-                        is the most powerful in operation. Standing 150 metres tall, it's quite an awe-inspiring 
-                        sight on the launch pad!
-                    </blockquote>
+                    <h2>${this._data[0].name}</h2>
+                    <blockquote>${this._data[0].description}</blockquote>
                 </div>
             </article>
-            <img src="/src/images/technology/image-launch-vehicle-portrait.jpg" alt="tech__image">
+            <img src="${this._data[0].images.portrait}" alt="tech__image">
         </section>`
     }
 
