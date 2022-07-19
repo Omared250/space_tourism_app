@@ -1,6 +1,7 @@
 import * as model from "./model.js";
 import crewView from "./views/crewView.js";
 import destination from "./views/destinationView.js";
+import homeView from "./views/homeView.js";
 import techView from "./views/techView.js";
 import view from "./views/view.js";
 
@@ -38,7 +39,11 @@ const updateTech = function(crw, arr, handler) {
 
 const controlNavBar = function(value) {
     try {
-        if (value.classList.contains('destination')) {
+        if (value.classList.contains('home')) {
+            view.cleaner();
+            homeView.renderHome();
+            controlHome();
+        } else if (value.classList.contains('destination')) {
             view.cleaner();
             destination.renderDestination(model.state.destinations);
             controlDestinations();
@@ -55,6 +60,23 @@ const controlNavBar = function(value) {
         console.error(err);
     }
 };
+
+const controlHome = function() {
+    try {
+        view.cleaner();
+        homeView.renderHome();
+        const exploreContainer = document.querySelector('.explore');
+        exploreContainer.addEventListener('click', (e) => {
+            const exp = e.target.closest('.explore');
+            if (exp) {
+                view.cleaner();
+                destination.renderDestination(model.state.destinations)
+            }
+        })
+    } catch (err) {
+        console.error(err);
+    }
+}
 
 const controlDestinations = function() {
     try {
@@ -124,5 +146,6 @@ const controlTech = function() {
 const init = function() {
     view.addHandlerRender(controlData);
     view.getClickValue(controlNavBar);
+    homeView.addHandlerHome(controlHome);
 }
 init();
