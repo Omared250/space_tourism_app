@@ -14,7 +14,8 @@ const controlData = async function() {
 };
 
 const updateDest = function(dest, arr, handler) {
-    const destn = dest.split(' ').map(w => w.charAt(0).toUpperCase() + w.slice(1).toLowerCase()).join(' ');
+    const destn = dest.split(' ').map(w => 
+        w.charAt(0).toUpperCase() + w.slice(1).toLowerCase()).join(' ');
 
     view.cleaner();
     destination.renderDestination(arr.filter(d => d.name === destn));
@@ -22,7 +23,8 @@ const updateDest = function(dest, arr, handler) {
 }
 
 const updateCrew = function(crw, arr, handler) {
-    const crewMem = crw.split(' ').map(w => w.charAt(0).toUpperCase() + w.slice(1).toLowerCase()).join(' ');
+    const crewMem = crw.split(' ').map(w => 
+        w.charAt(0).toUpperCase() + w.slice(1).toLowerCase()).join(' ');
     
     view.cleaner();
     crewView.renderCrew(arr.filter(c => c.role === crewMem));
@@ -30,7 +32,8 @@ const updateCrew = function(crw, arr, handler) {
 }
 
 const updateTech = function(crw, arr, handler) {
-    const techComp = crw.split(' ').map(w => w.charAt(0).toUpperCase() + w.slice(1).toLowerCase()).join(' ');
+    const techComp = crw.split(' ').map(w => 
+        w.charAt(0).toUpperCase() + w.slice(1).toLowerCase()).join(' ');
     
     view.cleaner();
     techView.renderTech(arr.filter(c => c.name === techComp));
@@ -43,14 +46,17 @@ const controlNavBar = function(value) {
             view.cleaner();
             homeView.renderHome();
             controlHome();
+
         } else if (value.classList.contains('destination')) {
             view.cleaner();
             destination.renderDestination(model.state.destinations);
             controlDestinations();
+
         } else if (value.classList.contains('crew')) {
             view.cleaner();
             crewView.renderCrew(model.state.crew)
-            controlCrew()
+            controlCrew();
+
         } else if (value.classList.contains('technology')) {
             view.cleaner();
             techView.renderTech(model.state.technology);
@@ -109,10 +115,13 @@ const controlCrew = function() {
             const crw = e.target
             if(crw.classList.contains('commander')) {
                 updateCrew('commander', model.state.crew, controlCrew)
+
             } else if(crw.classList.contains('mission_specialist')) {
                 updateCrew('mission specialist', model.state.crew, controlCrew)
+
             } else if(crw.classList.contains('pilot')) {
                 updateCrew('pilot', model.state.crew, controlCrew)
+
             } else if(crw.classList.contains('flight_engineer')) {
                 updateCrew('flight engineer', model.state.crew, controlCrew)
             }
@@ -131,10 +140,27 @@ const controlTech = function() {
             const tech = e.target;
             if(tech.classList.contains('vehicle')) {
                 updateTech('launch vehicle', model.state.technology, controlTech)
+
+                const vhcl = document.querySelector('.vehicle');
+                vhcl.classList.add('active');
+
             } else if(tech.classList.contains('spaceport')) {
                 updateTech('spaceport', model.state.technology, controlTech)
+
+                const veh = document.querySelector('.vehicle');
+                veh.classList.remove('active');
+
+                const port = document.querySelector('.spaceport');
+                port.classList.add('active');
+
             } else if(tech.classList.contains('capsule')) {
                 updateTech('Space capsule', model.state.technology, controlTech)
+
+                const veh = document.querySelector('.vehicle');
+                veh.classList.remove('active');
+
+                const cap = document.querySelector('.capsule');
+                cap.classList.add('active');
             }
         }))
     } catch (err) {

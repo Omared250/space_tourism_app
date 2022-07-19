@@ -73,7 +73,6 @@ body {
 
 .menu__options p:hover {
     cursor: pointer;
-    text-decoration: underline;
 }
 
 /*------------------space__article__home -------------------*/
@@ -192,6 +191,10 @@ body {
     color: var(--sub-headings);
     font-family: 'Barlow Condensed';
     letter-spacing: 2.35px;
+}
+
+.destination__info ul li:hover {
+    cursor: pointer;
 }
 
 .destination__info h1 {
@@ -345,7 +348,7 @@ body {
     margin: auto 4rem auto auto;
 }
 
-.tech_dots button {
+.options {
     border: 1px solid white;
     background-color: transparent;
     height: 4rem;
@@ -357,4 +360,9 @@ body {
     color: var(--headings);
     font-size: 30px;
     font-family: 'Bellefair';
+}
+
+.active {
+    background-color: var(--headings);
+    color: var(--support-color);
 }

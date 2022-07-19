@@ -16,9 +16,9 @@ class technology {
         <section class="tech__container">
             <article class="description__container">
                 <div class="tech_dots">
-                    <button class="vehicle">1</button>
-                    <button class="spaceport">2</button>
-                    <button class="capsule">3</button>
+                    <button class="vehicle options active">1</button>
+                    <button class="spaceport options">2</button>
+                    <button class="capsule options">3</button>
                 </div>
                 <div class="description">
                     <h4>THE TERMINOLOGY...</h4>
