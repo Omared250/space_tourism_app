@@ -46,7 +46,6 @@ const controlNavBar = function(value) {
             view.cleaner();
             homeView.renderHome();
             controlHome();
-
         } else if (value.classList.contains('destination')) {
             view.cleaner();
             destination.renderDestination(model.state.destinations);
