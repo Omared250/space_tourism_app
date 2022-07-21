@@ -8,6 +8,27 @@ class technology {
         const markup = this._generateMarkupTech();
         this._bacgroundEl.style.backgroundImage = "url('./src/images/technology/background-technology-desktop.jpg')"
         this._parentEl.insertAdjacentHTML("beforeend", markup);
+
+        const backDesktopImage = window.matchMedia("(min-width: 800px)");
+        const backTabletpImage = window.matchMedia("(max-width: 769px)");
+        const backMobilepImage = window.matchMedia("(max-width: 430px)");
+        backDesktopImage.onchange = (e) => {
+            if (e.matches) {
+                this._bacgroundEl.style.backgroundImage = "url('./src/images/technology/background-technology-desktop.jpg')";
+            }
+        }
+
+        backTabletpImage.onchange = (e) => {
+            if (e.matches) {
+                this._bacgroundEl.style.backgroundImage = "url('./src/images/technology/background-technology-tablet.jpg')";
+            }
+        }
+
+        backMobilepImage.onchange = (e) => {
+            if (e.matches) {
+                this._bacgroundEl.style.backgroundImage = "url('./src/images/technology/background-technology-mobile.jpg')";
+            }
+        }
     }
 
     _generateMarkupTech() {

@@ -8,6 +8,27 @@ class Destination  {
         const markup = this._generateMarkup();
         this._bacgroundEl.style.backgroundImage = "url('./src/images/destination/background-destination-desktop.jpg')"
         this._parentEl.insertAdjacentHTML("beforeend", markup);
+
+        const backDesktopImage = window.matchMedia("(min-width: 800px)");
+        const backTabletpImage = window.matchMedia("(max-width: 769px)");
+        const backMobilepImage = window.matchMedia("(max-width: 430px)");
+        backDesktopImage.onchange = (e) => {
+            if (e.matches) {
+                this._bacgroundEl.style.backgroundImage = "url('./src/images/destination/background-destination-desktop.jpg')";
+            }
+        }
+
+        backTabletpImage.onchange = (e) => {
+            if (e.matches) {
+                this._bacgroundEl.style.backgroundImage = "url('./src/images/destination/background-destination-tablet.jpg')";
+            }
+        }
+
+        backMobilepImage.onchange = (e) => {
+            if (e.matches) {
+                this._bacgroundEl.style.backgroundImage = "url('./src/images/destination/background-destination-mobile.jpg')";
+            }
+        }
     }
  
     _generateMarkup() {

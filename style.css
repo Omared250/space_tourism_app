@@ -17,12 +17,11 @@
 body {
     min-width: 100vh;
     min-height: 100vh;
-    background-image: url(./src/images/home/background-home-desktop.jpg);
+    /* background-image: url(./src/images/home/background-home-desktop.jpg); */
     background-repeat: no-repeat;
     background-size: cover;
     background-position: bottom;
 }
-
 /*----------------------- nav_bar -------------------*/
 
 .nav__bar {
@@ -75,11 +74,21 @@ body {
     cursor: pointer;
 }
 
+@media (min-width: 1441px) {
+    .nav__bar {
+        max-width: 1440px;
+        margin: 5rem auto;
+    }
+}
+
 /*------------------space__article__home -------------------*/
 
-/* .main_section {
-    max-width: 1440px;
-} */
+@media (min-width: 1441px) {
+    .main_section {
+        max-width: 1430px;
+        margin: 10rem auto;
+    }
+}
 
 .home__info {
     width: 25rem;
@@ -147,6 +156,14 @@ body {
 .explore:hover {
     background-color: rgba(125, 125, 125, 0.35);
     border-radius: 50%;
+}
+
+@media (min-width: 1441px) {
+    .explore{
+        top: 30rem;
+        right: 0;
+        left: 60%;    
+    }
 }
 
 /*---------------------DESTINATIONS ---------------------------*/
