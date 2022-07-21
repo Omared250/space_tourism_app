@@ -154,12 +154,14 @@ body {
 
 @media (max-width: 769px) {
     .main_section {
-        margin: auto 5%;
+        width: fit-content;
+        margin: auto;
         text-align: center;
     }
 
     .home__info {
         margin-top: 8rem;
+        margin-left: auto;
         margin-bottom: 30rem;
     }
 
@@ -224,7 +226,7 @@ body {
     .explore {
         top: 40rem;
         right: 0;
-        left: 35%;
+        left: 30%;
     }
 }
 
@@ -316,6 +318,40 @@ body {
     font-family: 'Bellefair';
     font-size: 24px;
     color: var(--headings);
+}
+
+@media (max-width: 769px) {
+    .destination__title {
+        margin-left: 0;
+    }
+
+    .destination__image {
+        margin-left: 0;
+        width: 20rem;
+    }
+
+    .destination__info {
+        width: 60%;
+        padding-bottom: 3rem;
+        margin: 5rem auto 0 auto;
+        text-align: center;
+    }
+
+    .destination__info h1 {
+        margin: 2rem auto;
+    }
+
+    .destination__info ul {
+        justify-content: center;
+    }
+
+    .destination__details {
+        justify-content: center;
+    }
+
+    .destination__info p {
+        font-size: 16px;
+    }
 }
 
 /*---------------------- CREW -------------------------*/

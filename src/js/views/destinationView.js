@@ -6,9 +6,22 @@ class Destination  {
     renderDestination(data) {
         this._data = data
         const markup = this._generateMarkup();
-        this._bacgroundEl.style.backgroundImage = "url('./src/images/destination/background-destination-desktop.jpg')"
         this._parentEl.insertAdjacentHTML("beforeend", markup);
+        this._checkingWidthScreen();
+        this._backImage();
+    }
 
+    _checkingWidthScreen() {
+        if (screen.width > 1020) {
+            this._bacgroundEl.style.backgroundImage = "url('./src/images/destination/background-destination-desktop.jpg')";
+        } else if (screen.width < 1019) {
+            this._bacgroundEl.style.backgroundImage = "url('./src/images/destination/background-destination-tablet.jpg')";
+        } else if (screen.width < 769) {
+            this._bacgroundEl.style.backgroundImage = "url('./src/images/destination/background-destination-mobile.jpg')";
+        }
+    }
+
+    _backImage() {
         const backDesktopImage = window.matchMedia("(min-width: 800px)");
         const backTabletpImage = window.matchMedia("(max-width: 769px)");
         const backMobilepImage = window.matchMedia("(max-width: 430px)");
@@ -29,6 +42,7 @@ class Destination  {
                 this._bacgroundEl.style.backgroundImage = "url('./src/images/destination/background-destination-mobile.jpg')";
             }
         }
+        
     }
  
     _generateMarkup() {
@@ -42,17 +56,17 @@ class Destination  {
             <li>EUROPA</li>
             <li>TITAN</li>
            </ul>
-           <h1>${this._data[0].name}</h1>
+           <h1>${this._data[0].name.toUpperCase()}</h1>
            <p>${this._data[0].description}</p>
            <hr>
            <article class="destination__details">
                <div class="distance">
                    <h4>AVG. DISTANCE</h4>
-                   <span>${this._data[0].distance}</span>
+                   <span>${this._data[0].distance.toUpperCase()}</span>
                </div>
                <div class="travel__time">
                    <h4>EST. TRAVEL TIME</h4>
-                   <span>${this._data[0].travel}</span>
+                   <span>${this._data[0].travel.toUpperCase()}</span>
                </div>
            </article>
         </section>`
