@@ -84,15 +84,14 @@ body {
 @media (max-width: 769px) {
     .nav__bar {
         width: 100%;
-        margin-top: 0;
         margin-left: 0;
+        margin-top: 0;
+        flex-flow: row wrap;
         justify-content: space-between;
     }
 
     .nav__bar img {
-        margin-right: 0;
-        margin-top: 0.9rem;
-        margin-left: 2rem;
+        margin-left: 1rem;
         width: 2.5rem;
         height: 2.5rem;
     }
@@ -323,6 +322,7 @@ body {
 @media (max-width: 769px) {
     .destination__title {
         margin-left: 0;
+        font-size: 20px;
     }
 
     .destination__image {
@@ -435,6 +435,7 @@ body {
 @media (max-width: 769px) {
     .crew__title {
         margin-left: 0;
+        font-size: 20px;
     }
 
     .slider {
@@ -469,6 +470,20 @@ body {
 }
 
 /*----------------- TECHNOLOGY ------------------*/
+
+.tech__title {
+    margin-top: 5.5rem;
+    margin-left: 10rem;
+    color: var(--headings);
+    font-family: 'Barlow Condensed';
+    font-size: 28px;
+    letter-spacing: 4.35px;
+}
+
+.tech__title span {
+    color: rgb(81, 81, 81);
+    padding-right: 0.5rem;
+}
 
 .tech__container {
     display: flex;
@@ -530,4 +545,40 @@ body {
 .active {
     background-color: var(--headings);
     color: var(--support-color);
+}
+
+@media (max-width: 769px) {
+    .tech__title {
+        margin: 3rem auto;
+        font-size: 20px;
+    }
+
+    .tech__container {
+        width: 100%;
+        flex-flow: column-reverse;
+        margin: auto;
+    }
+
+    .tech_dots {
+        margin: 2rem auto;
+    }
+
+    .options {
+        margin: auto 0.5rem;
+    }
+
+    .description__container {
+        flex-flow: column;
+        align-items: center;
+        margin: auto;
+    }
+
+    .description {
+        margin: auto;
+    }
+
+    .description blockquote {
+        width: 54%;
+        margin: 1rem auto 5rem auto;
+    }
 }
