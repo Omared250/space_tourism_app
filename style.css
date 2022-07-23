@@ -17,7 +17,6 @@
 body {
     min-width: 100vh;
     min-height: 100vh;
-    /* background-image: url(./src/images/home/background-home-desktop.jpg); */
     background-repeat: no-repeat;
     background-size: cover;
     background-position: bottom;
@@ -78,6 +77,35 @@ body {
     .nav__bar {
         max-width: 1440px;
         margin: 5rem auto;
+    }
+}
+
+@media (max-width: 1112px) {
+    .nav__bar {
+        width: 100%;
+        margin-left: 0;
+        margin-top: 0;
+        flex-flow: row wrap;
+        justify-content: space-between;
+    }
+
+    .nav__bar img {
+        margin-left: 1rem;
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+
+    .nav__bar hr {
+        display: none;
+    }
+
+    .menu__options {
+        width: 55%;
+        font-size: 14px;
+    }
+
+    .menu__options span {
+        display: none;
     }
 }
 
@@ -317,6 +345,16 @@ body {
     font-family: 'Bellefair';
     font-size: 24px;
     color: var(--headings);
+}
+
+@media (max-width: 1112px) {
+    .destination__image {
+        margin-left: 5rem;
+    }
+
+    .destination__info {
+        margin-left: 40rem;
+    }
 }
 
 @media (max-width: 769px) {
