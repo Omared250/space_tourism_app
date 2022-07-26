@@ -2,6 +2,7 @@ import * as model from "./model.js";
 import crewView from "./views/crewView.js";
 import destination from "./views/destinationView.js";
 import homeView from "./views/homeView.js";
+import navBarView from "./views/navBarView.js";
 import techView from "./views/techView.js";
 import view from "./views/view.js";
 
@@ -46,6 +47,7 @@ const controlNavBar = function(value) {
             view.cleaner();
             homeView.renderHome();
             controlHome();
+
         } else if (value.classList.contains('destination')) {
             view.cleaner();
             destination.renderDestination(model.state.destinations);
@@ -173,5 +175,7 @@ const init = function() {
     view.addHandlerRender(controlData);
     view.getClickValue(controlNavBar);
     homeView.addHandlerHome(controlHome);
+    navBarView.showMenuOptions();
+    navBarView.closeMenuOptions();
 }
 init();
