@@ -239,7 +239,7 @@ body {
     .home__info {
         margin-top: 8rem;
         margin-left: auto;
-        margin-bottom: 30rem;
+        margin-bottom: 25rem;
     }
 
     .home__info h1 {
@@ -251,7 +251,9 @@ body {
     }
     
     .home__info .home_description {
-        font-size: 18px;
+        margin: auto;
+        width: 65%;
+        font-size: 20px;
     }
 }
 
@@ -324,7 +326,7 @@ body {
 
 @media (max-width: 769px) {
     .explore {
-        top: 40rem;
+        top: 35rem;
         right: 0;
         left: 30%;
     }
