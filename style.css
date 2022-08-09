@@ -474,6 +474,48 @@ body {
     }
 }
 
+@media (max-width: 680px) {
+    .destination__title {
+        margin-top: 2rem;
+        margin-left: 0;
+    }
+
+    .destination__info {
+        width: 90%;
+        padding-bottom: 0;
+        margin: 2rem auto;
+        text-align: center;
+    }
+
+    .destination__options {
+        margin: 3rem auto;
+    }
+
+    .destination__info h1 {
+        font-size: 70px;
+        margin: auto;
+    }
+
+    .destination__info ul {
+        justify-content: center;
+    }
+
+    .destination__info p {
+        width: 85%;
+        margin: 2rem auto;
+        font-size: 18px;
+    }
+
+    .destination__details {
+        flex-direction: column;
+        justify-content: center;
+
+        gap: 2rem;
+
+        margin: 3rem auto;
+    }
+}
+
 /*---------------------- CREW -------------------------*/
 
 .crew__title {
