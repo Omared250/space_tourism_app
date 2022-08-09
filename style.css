@@ -238,6 +238,7 @@ body {
     }
 
     .home__info {
+        width: fit-content;
         margin-top: 8rem;
         margin-left: auto;
         margin-bottom: 25rem;
@@ -260,6 +261,7 @@ body {
 
 @media (max-width: 680px) {
     .home__info {
+        width: fit-content;
         margin-top: 2rem;
         margin-left: auto;
         margin-bottom: 25rem;
