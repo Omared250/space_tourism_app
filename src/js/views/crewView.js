@@ -51,9 +51,11 @@ class crew {
         <div class="slider">
             <div class="slide slide--1">
                 <div class="biografia">
-                    <h4 class="role">${this._data[0].role.toUpperCase()}</h4>
-                    <h2 class="name">${this._data[0].name.toUpperCase()}</h2>
-                    <blockquote class="biografia__text">${this._data[0].bio}</blockquote>
+                    <div>
+                        <h4 class="role">${this._data[0].role.toUpperCase()}</h4>
+                        <h2 class="name">${this._data[0].name.toUpperCase()}</h2>
+                        <blockquote class="biografia__text">${this._data[0].bio}</blockquote>
+                    </div>
                     <div class="dots">
                         <button class="dots__dot commander"></button>
                         <button class="dots__dot mission_specialist"></button>
