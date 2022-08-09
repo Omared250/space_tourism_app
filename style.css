@@ -15,10 +15,6 @@
 }
 
 body {
-    display: flex;
-    flex-wrap: wrap;
-    min-width: 100vh;
-    min-height: 100vh;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: bottom;
@@ -205,7 +201,6 @@ body {
 }
 
 .home__info {
-    width: 25rem;
     height: fit-content;
     margin-top: 15rem;
     margin-left: 10rem;
@@ -238,8 +233,6 @@ body {
 
 @media (max-width: 769px) {
     .main_section {
-        width: fit-content;
-        margin: auto;
         text-align: center;
     }
 
@@ -263,11 +256,6 @@ body {
 }
 
 @media (max-width: 680px) {
-    .main_section {
-        width: 90%;
-        margin: auto;
-    }
-
     .home__info {
         margin-top: 2rem;
         margin-left: auto;
