@@ -26,7 +26,7 @@ Users should be able to:
 
 ### Screenshot
 
-![Design](https://github.com/Omared250/countries_web_app/blob/master/src/design/Final-Design.png)
+![Design](https://github.com/Omared250/space_tourism_app/blob/master/src/design/home_page.png)
 
 ### Links
 
@@ -46,20 +46,22 @@ Users should be able to:
 
 ### What I learned
 
-This project taught me a lot about how to make a page that can be adjusted to the size of the device used by the user. I made several checks with 
-friends and acquaintances to see if it worked in all of them in the same way, I can say that thanks to this I was able to find some errors. and to be 
-able to work on them, I can also say that it is not 100% complete or perfect but I have worked a lot on it, I have been able to work with more confidence 
+This project taught me a lot about how to make a page that can be adjusted to the size of the device used by the user. I made several checks with
+friends and acquaintances to see if it worked in all of them in the same way, I can say that thanks to this I was able to find some errors. and to be
+able to work on them, I can also say that it is not 100% complete or perfect but I have worked a lot on it, I have been able to work with more confidence
 with JS than in previous projects.
 
-```js proud-of-this: 
-const updateDest = function(dest, arr, handler) {
-    const destn = dest.split(' ').map(w => 
-        w.charAt(0).toUpperCase() + w.slice(1).toLowerCase()).join(' ');
+```js proud-of-this:
+const updateDest = function (dest, arr, handler) {
+  const destn = dest
+    .split(" ")
+    .map((w) => w.charAt(0).toUpperCase() + w.slice(1).toLowerCase())
+    .join(" ");
 
-    view.cleaner();
-    destination.renderDestination(arr.filter(d => d.name === destn));
-    handler();
-}
+  view.cleaner();
+  destination.renderDestination(arr.filter((d) => d.name === destn));
+  handler();
+};
 ```
 
 ## Author
