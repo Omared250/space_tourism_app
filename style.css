@@ -339,10 +339,21 @@ body {
 @media (max-width: 680px) {
     .explore {
         top: 30rem;
-        left: 1rem;
+        left: 3.5rem;
     }
 }
 
+@media (max-width: 380px) {
+    .explore {
+        left: 1.5rem;
+    }
+}
+
+@media (max-width: 330px) {
+    .explore {
+        left: 0rem;
+    }
+}
 /*---------------------DESTINATIONS ---------------------------*/
 
 /*--------------TITLE----------------------*/
